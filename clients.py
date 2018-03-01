@@ -1,10 +1,15 @@
-import socket, sys, os, datetime, time
+import socket
+import sys
+import os
+import datetime
+import time
+import clientConfig
 from threading import Thread
 
 
 name = os.getlogin()
 
-ServerIP = '192.168.1.128'
+ServerIP = serverip
 hostIP = socket.gethostbyname(socket.gethostname())
 
 initialisationPort = 5000

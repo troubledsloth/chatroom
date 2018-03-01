@@ -1,0 +1,1 @@
+serverip = '' # Establish server ip

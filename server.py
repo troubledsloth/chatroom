@@ -1,9 +1,12 @@
-import socket, sys, os, time
+import socket
+import time
+import serverConfig
 from threading import Thread
 
 listOfUsers = []
 
-IP = '192.168.1.128'
+IP = serverip
+path = PATH
 
 listeningPort = 5000
 recievingPort = 5001
@@ -29,7 +32,7 @@ def listening():
             listOfUsers.append(data)
         else:
             pass
-        with open('E:\\log.txt', 'r') as file:
+        with open(path, 'r') as file:
             for line in file.readlines():
                 line = line.replace('\n', '')
                 line = line.encode()
@@ -46,7 +49,7 @@ def reciever():
     while True:
         data, addr = recievingSocket.recvfrom(4096)
         data = data.decode('utf-8')
-        with open('E:\\log.txt', 'a') as file:
+        with open(path, 'a') as file:
             file.write(data + '\n')
         print(data)
         print('All users: {0} '.format(listOfUsers))
@@ -85,7 +88,7 @@ def main():
 
 
 if __name__ == '__main__':
-    with open('E:\\log.txt', 'r') as file:
+    with open(path, 'r') as file:
         for line in file.readlines():
             line = line.replace('\n', '')
             print(line)
