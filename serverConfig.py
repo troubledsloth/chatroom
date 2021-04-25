@@ -1,2 +1,2 @@
 serverip = ''   #IP address of where the server is
-PATH = ''  #Path of log file
+PATH = 'log.txt'  #Path of log file
