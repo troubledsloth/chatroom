@@ -1,2 +1,2 @@
 # chatroom
-A chatroom using sockets used to communicate across my school's network!
+A chatroom using python and sockets, for communicating over local computers. 
